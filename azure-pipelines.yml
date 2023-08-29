@@ -11,7 +11,7 @@ resources:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '1145b3c7-f0a6-4506-bcc2-879c129c5a86'
+  dockerRegistryServiceConnection: 'jhtestacr-connection'
   imageRepository: 'leonardbaepipelinesjavascriptdocker'
   containerRegistry: 'jhtestacr.azurecr.io'
   dockerfilePath: '**/Dockerfile'
@@ -73,7 +73,7 @@ stages:
             inputs:
               action: deploy
               connectionType: 'kubernetesServiceConnection'
-              kubernetesServiceConnection: 'ns-test'
+              kubernetesServiceConnection: 'testaks-ns-sample'
               namespace: 'ns-test'
               manifests: |
                 $(Pipeline.Workspace)/manifests/deployment.yml
