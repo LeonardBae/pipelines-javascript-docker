@@ -13,7 +13,7 @@ variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '1145b3c7-f0a6-4506-bcc2-879c129c5a86'
   imageRepository: 'leonardbaepipelinesjavascriptdocker'
-  containerRegistry: 'jhtestcacr.azurecr.io'
+  containerRegistry: 'jhtestacr.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'jhtestcacr195f-auth'
