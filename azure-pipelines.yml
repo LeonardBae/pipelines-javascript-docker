@@ -19,7 +19,8 @@ variables:
   imagePullSecret: 'jhtestcacr195f-auth'
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+  poolName: 'default'
+  poolVmImage: 'ubuntu-latest'
 
 
 stages:
@@ -29,7 +30,8 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      vmImage: $(vmImageName)
+      name: $(poolName) 
+      vmImage: $(poolVmImage)
     steps:
     - task: Docker@2
       displayName: Build and push an image to container registry
